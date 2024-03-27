@@ -86,7 +86,7 @@ public class Utilities {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
             String formattedDateTime = currentDateTime.format(formatter);
 
-            String screenshotPath = "TestOutputs/Screenshots"+testName+"_"+formattedDateTime+".png";
+            String screenshotPath = System.getProperty("user.dir")+"\\TestOutputs\\Screenshots\\"+testName+"_"+formattedDateTime+".png";
 
             File screenshotFile = new File(screenshotPath);
             Robot robo = new Robot();

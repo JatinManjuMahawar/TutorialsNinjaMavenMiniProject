@@ -21,7 +21,7 @@ public class Listeners implements ITestListener
     ExtentTest extentTest;
     ExtentReportingClass erc = new ExtentReportingClass();
     String testName;
-
+    String userDirPath = System.getProperty("user.dir").replace("\\", "/");
     @Override
     public void onStart(ITestContext context) {
         extentReports = erc.generateEctentReport();
@@ -55,7 +55,7 @@ public class Listeners implements ITestListener
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        screenshotPath = "D:\\TutorialsNinjaMavenMiniProject\\" + screenshotPath;
+
         extentTest.addScreenCaptureFromPath(screenshotPath);
         extentTest.log(Status.INFO, result.getThrowable());
         extentTest.log(Status.FAIL, testName +  " got failed");
